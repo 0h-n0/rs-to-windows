@@ -15,9 +15,14 @@ jobs:
       matrix:
         rust:
           - stable 
-        os: 
-          - ubuntu-22.04
-          - windows-2021
+        include:
+          # - os: ubuntu-22.04
+          #   artifact: target/release/actix-gcd
+          - os: windows-2021
+            artifact: target/release/actix-gcd.exe
+        exe:
+          - target/release/actix-gcd.exe
+          - target/release/actix-gcd
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v3
@@ -48,4 +53,4 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: myflet_extlib
-        path: target/release/actix-gcd.exe
+        path: ${{ matrix.artifact }}
