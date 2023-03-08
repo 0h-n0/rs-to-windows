@@ -20,9 +20,6 @@ jobs:
           #   artifact: target/release/actix-gcd
           - os: windows-2021
             artifact: target/release/actix-gcd.exe
-        exe:
-          - target/release/actix-gcd.exe
-          - target/release/actix-gcd
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v3
