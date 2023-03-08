@@ -16,7 +16,7 @@ fn get_index() -> HttpResponse {
         <form action="/gcd" method="post">
         <input type="text" name="n"/>
         <input type="text" name="m"/>
-        <button type="submit>Compute GCD</button>
+        <button type="submit">Compute GCD</button>
         </form>
         "#,
     )
